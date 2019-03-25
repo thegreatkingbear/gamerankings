@@ -14,12 +14,16 @@ BOT_NAME = 'gamerankings'
 SPIDER_MODULES = ['gamerankings.spiders']
 NEWSPIDER_MODULE = 'gamerankings.spiders'
 
+MONGODB_SERVER = "localhost"
+MONGODB_PORT = 27017
+MONGODB_DB = "games"
+MONGODB_COLLECTION = "reviews"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'gamerankings (+http://www.yourdomain.com)'
+USER_AGENT = 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Mobile Safari/537.36'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -64,9 +68,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'gamerankings.pipelines.GamerankingsPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'gamerankings.pipelines.GamerankingsPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

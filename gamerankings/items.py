@@ -8,7 +8,19 @@
 import scrapy
 
 
-class GamerankingsItem(scrapy.Item):
+class GameItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
+    name = scrapy.Field()
+    crumbs = scrapy.Field()
+    review_url = scrapy.Field()
+    pass
+
+class ReviewItem(scrapy.Item):
+    game_name = scrapy.Field()
+    game_tag = scrapy.Field()
+    source = scrapy.Field()
+    url = scrapy.Field()
+    date = scrapy.Field()
+    content = scrapy.Field()
+    score = scrapy.Field()
     pass
